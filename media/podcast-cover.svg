@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+<rect width="800" height="500" fill="#b5523b"/>
+<rect x="24" y="24" width="752" height="452" fill="none" stroke="#ffffff" stroke-width="3" stroke-dasharray="12 10"/>
+<text x="400" y="240" font-family="Arial, sans-serif" font-size="34" fill="#ffffff" text-anchor="middle">Podcast cover art</text>
+<text x="400" y="290" font-family="Arial, sans-serif" font-size="22" fill="#ffffff" text-anchor="middle" opacity="0.85">Replace: media/podcast-cover.jpg</text>
+</svg>

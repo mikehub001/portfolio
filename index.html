@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Portfolio of Mikey Dunne: interactive, sound and spatial design work.">
+    <meta name="author" content="Mikey Dunne">
+    <title>Mikey Dunne | Interactive Digital Media</title>
+    <!-- The one external stylesheet used by every page -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Site header: full-width sage band (same on every page) -->
+    <header class="site-header">
+        <!-- .container centres the content and limits its width -->
+        <div class="container header-inner">
+            <a class="logo" href="index.html">Mikey Dunne</a>
+            <nav class="site-nav" aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html" aria-current="page">Home</a></li>
+                    <li><a href="work.html">Work</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <!-- CV opens as a PDF in a new tab -->
+                    <li><a class="nav-cv" href="media/Mikey_Dunne_CV.pdf" target="_blank" rel="noopener">CV</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <main>
+            <!-- Hero: one centred statement, then the disciplines as pills -->
+            <section class="hero">
+                <p class="eyebrow dot">Interactive Digital Media · Trinity College Dublin</p>
+                <!-- span.accent-word = the one italic, coloured word (see style.css section 4) -->
+                <h1>I design spaces, sounds and stories people can <span class="accent-word">explore.</span></h1>
+                <p class="intro">[Rewrite in your own words] Hi, I'm Mikey. MSc student working across interactive design, sound and video. Currently building Identity Hotel, a calmer, more personal alternative to social media.</p>
+
+                <!-- What I work with: each dot matches a project colour -->
+                <ul class="pills">
+                    <li class="p-hotel">Spatial design</li>
+                    <li class="p-podcast">Sound</li>
+                    <li class="p-video">Video</li>
+                    <li class="p-maze">Games</li>
+                    <li class="p-code">Code</li>
+                </ul>
+
+                <a class="button" href="work.html">View my work</a>
+            </section>
+
+            <!-- Featured projects: the three strongest pieces -->
+            <section class="section">
+                <p class="eyebrow">Selected work</p>
+                <h2>Featured <span class="accent-word">projects</span></h2>
+
+                <div class="card-grid">
+                    <!-- Card 1: Identity Hotel -->
+                    <article class="card accent-hotel">
+                        <img src="media/hotel-sketch.svg" alt="Hand-drawn sketch of a hotel cross-section with labelled floors and rooms">
+                        <div class="card-body">
+                            <span class="tag">Research · Spatial</span>
+                            <h3><a href="work.html#identity-hotel">Identity Hotel</a></h3>
+                            <p>A hotel of rooms that hold memories and ideas, where you get to know someone by exploring, not by counting likes.</p>
+                        </div>
+                    </article>
+
+                    <!-- Card 2: Podcast -->
+                    <article class="card accent-podcast">
+                        <img src="media/podcast-cover.svg" alt="Cover art for the podcast series">
+                        <div class="card-body">
+                            <span class="tag">Sound</span>
+                            <h3><a href="work.html#podcast">Podcast series</a></h3>
+                            <p>A three-episode podcast: researched, recorded and edited during my undergraduate degree.</p>
+                        </div>
+                    </article>
+
+                    <!-- Card 3: Art video -->
+                    <article class="card accent-video">
+                        <img src="media/art-video-poster.svg" alt="Still frame from the art video">
+                        <div class="card-body">
+                            <span class="tag">Video</span>
+                            <h3><a href="work.html#art-video">Art video</a></h3>
+                            <p>A 19-second video piece on art, made as part of a recent group project.</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+        <!-- Site footer (same on every page) -->
+        <footer class="site-footer">
+            <p>&copy; 2026 Mikey Dunne</p>
+            <p><a href="https://github.com/mikehub001">GitHub</a> · <a href="contact.html">Get in touch</a></p>
+        </footer>
+
+    </div>
+</body>
+</html>

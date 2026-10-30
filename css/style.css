@@ -1,0 +1,594 @@
+/* =========================================================
+   Mikey Dunne – Portfolio stylesheet
+   One external stylesheet shared by every page.
+   Sections:
+     1. Fonts and colour variables
+     2. Base styles
+     3. Header and navigation (flexbox)
+     4. Home page hero, accent words and discipline pills
+     5. Project cards (grid)
+     6. Work page project sections
+     7. About and Contact pages
+     8. Footer
+     9. Small screens (media query)
+   ========================================================= */
+
+
+/* ---------- 1. Fonts and colour variables ---------- */
+
+/* Google Fonts loaded here (not in the HTML) so the site
+   still uses a single external stylesheet.
+   Montserrat = headings, Lato = body text (both echo my CV),
+   Instrument Serif (italic) = the occasional accent word and numbers. */
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@500;600;700&family=Instrument+Serif:ital@0;1&display=swap");
+
+/* Colours stored once as variables so they stay consistent.
+   Each project has its own accent colour – the "artistic twist"
+   on an otherwise calm, professional base. */
+:root {
+    /* Base palette taken from my CV, so CV and website match */
+    --paper: #f4f5f2;      /* soft off-white background */
+    --sage: #9cada7;       /* CV header green – used for the site header */
+    --sage-dark: #4f6f68;  /* deeper sage for text accents (readable on white) */
+    --navy: #163853;       /* CV dark blue – logo and buttons */
+    --ink: #323b4c;        /* CV slate – main text */
+    --muted: #5d6573;      /* secondary text */
+    --line: #e4e4e4;       /* CV light grey – borders */
+
+    /* Project colours: muted, earthy tones that sit with the sage.
+       All pass WCAG AA contrast with white text. */
+    --hotel: #4f6f68;      /* deep sage   – Identity Hotel */
+    --podcast: #b5523b;    /* terracotta  – Podcast */
+    --video: #9a6b12;      /* ochre       – Art video */
+    --aran: #2f7480;       /* sea teal    – Aran Islands */
+    --maze: #3d5a8c;       /* slate blue  – 3D maze */
+    --code: #8a4f7d;       /* plum        – Interactive piece */
+}
+
+
+/* ---------- 2. Base styles ---------- */
+
+/* Width and height include padding and border,
+   so boxes are the size we set them to. */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: var(--paper);
+    color: var(--ink);
+    font-family: "Lato", Arial, Helvetica, sans-serif;
+    font-size: 1.05em;   /* em keeps text scalable for users who zoom */
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+    font-family: "Montserrat", Arial, sans-serif;
+    font-weight: 600;
+    line-height: 1.15;
+    color: var(--navy);
+}
+
+h1 {
+    font-size: 3em;
+    margin: 0 0 0.3em;
+}
+
+h2 {
+    font-size: 2em;
+    margin: 0 0 0.5em;
+}
+
+h3 {
+    font-size: 1.3em;
+    margin: 0.6em 0 0.3em;
+}
+
+a {
+    color: var(--ink);
+}
+
+/* Images never overflow their container */
+img,
+video,
+iframe {
+    max-width: 100%;
+    display: block;
+}
+
+/* Centres the page content and stops lines getting too long */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5em;
+}
+
+/* Small label above headings, e.g. "Selected work" */
+.eyebrow {
+    font-size: 0.8em;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 0.5em;
+}
+
+
+/* ---------- 3. Header and navigation (flexbox) ---------- */
+
+/* Full-width sage band, like the header on my CV */
+.site-header {
+    background-color: var(--sage);
+}
+
+/* Flexbox puts the name on the left and the links on the right */
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1em;
+    padding-top: 1.2em;
+    padding-bottom: 1.2em;
+}
+
+/* Name in spaced capitals, matching the CV heading */
+.logo {
+    font-family: "Montserrat", Arial, sans-serif;
+    font-size: 1.3em;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--navy);
+    text-decoration: none;
+}
+
+/* The navigation list sits in a row */
+.site-nav ul {
+    display: flex;
+    align-items: center;
+    gap: 1.5em;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.site-nav a {
+    color: var(--navy);
+    text-decoration: none;
+    font-weight: 700;
+    padding-bottom: 0.2em;
+    border-bottom: 3px solid transparent;
+}
+
+/* Hover and current page both get an underline,
+   so visitors can always see where they are */
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
+    border-bottom-color: var(--navy);
+}
+
+/* "CV" link styled as an outlined pill so it stands apart */
+.site-nav .nav-cv {
+    padding: 0.35em 1em;
+    border: 2px solid var(--navy);
+    border-radius: 2em;
+}
+
+.site-nav .nav-cv:hover {
+    background-color: var(--navy);
+    color: var(--paper);
+}
+
+
+/* ---------- 4. Home page hero, accent words and discipline pills ---------- */
+
+/* One centred column: says less, so each part matters more */
+.hero {
+    text-align: center;
+    padding: 6em 0 4em;
+}
+
+.hero h1 {
+    font-size: 4em;
+    max-width: 12em;
+    margin: 0 auto 0.4em;
+}
+
+.hero .intro {
+    font-size: 1.2em;
+    color: var(--muted);
+    max-width: 32em;
+    margin: 0 auto;
+}
+
+/* The signature detail: one word per heading set in an italic serif
+   and coloured, e.g. "explore." – a small contrast that adds character
+   without extra decoration. */
+.accent-word {
+    font-family: "Instrument Serif", Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--sage-dark);
+}
+
+/* Small coloured dot before the eyebrow label */
+.dot::before {
+    content: "";
+    display: inline-block;
+    width: 0.6em;
+    height: 0.6em;
+    margin-right: 0.6em;
+    border-radius: 50%;
+    background-color: var(--sage-dark);
+}
+
+/* Row of pill-shaped labels; each pill's dot uses a project colour.
+   Flexbox centres them and wraps them on small screens. */
+.pills {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.6em;
+    list-style: none;
+    padding: 0;
+    margin: 2em 0 0;
+}
+
+.pills li {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    padding: 0.4em 1em;
+    background-color: #ffffff;
+    border: 1px solid var(--line);
+    border-radius: 2em;
+    font-size: 0.95em;
+}
+
+/* The coloured dot inside each pill */
+.pills li::before {
+    content: "";
+    width: 0.6em;
+    height: 0.6em;
+    border-radius: 50%;
+    background-color: var(--ink);
+}
+
+.pills .p-hotel::before   { background-color: var(--hotel); }
+.pills .p-podcast::before { background-color: var(--podcast); }
+.pills .p-video::before   { background-color: var(--video); }
+.pills .p-aran::before    { background-color: var(--aran); }
+.pills .p-maze::before    { background-color: var(--maze); }
+.pills .p-code::before    { background-color: var(--code); }
+
+/* Button-style link */
+.button {
+    display: inline-block;
+    margin-top: 2em;
+    padding: 0.8em 1.6em;
+    background-color: var(--navy);
+    color: var(--paper);
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 2em;
+}
+
+/* Second button style: outlined */
+.button-outline {
+    background-color: transparent;
+    color: var(--navy);
+    border: 2px solid var(--navy);
+    margin-left: 0.5em;
+}
+
+.button:hover {
+    background-color: var(--sage-dark);
+    color: var(--paper);
+}
+
+/* Big italic numbers for quick facts, e.g. "3 episodes" */
+.stats {
+    display: flex;
+    gap: 2.5em;
+    margin: 1.5em 0;
+}
+
+.stat-number {
+    display: block;
+    font-family: "Instrument Serif", Georgia, serif;
+    font-style: italic;
+    font-size: 3.2em;
+    line-height: 1;
+}
+
+.stat-label {
+    color: var(--muted);
+    font-size: 0.9em;
+}
+
+
+/* ---------- 5. Project cards (grid) ---------- */
+
+.section {
+    padding: 3em 0;
+}
+
+/* Cards in a 3-column grid; each column at least 260px wide */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.5em;
+}
+
+/* Each card: white box with a thick coloured top border.
+   The colour changes per project (see .accent-… classes). */
+.card {
+    background-color: #ffffff;
+    border: 1px solid var(--line);
+    border-top: 8px solid var(--ink);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.card-body {
+    padding: 1em 1.2em 1.4em;
+}
+
+.card p {
+    margin: 0;
+    color: var(--muted);
+}
+
+/* Small coloured tags like "Sound" or "Game" */
+.tag {
+    display: inline-block;
+    font-size: 0.75em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.2em 0.7em;
+    border-radius: 1em;
+    color: #ffffff;
+    background-color: var(--ink);
+}
+
+/* Accent colours: one class per project, used on cards and tags */
+.accent-hotel   { border-top-color: var(--hotel); }
+.accent-podcast { border-top-color: var(--podcast); }
+.accent-video   { border-top-color: var(--video); }
+.accent-aran    { border-top-color: var(--aran); }
+.accent-maze    { border-top-color: var(--maze); }
+.accent-code    { border-top-color: var(--code); }
+
+.accent-hotel .tag   { background-color: var(--hotel); }
+.accent-podcast .tag { background-color: var(--podcast); }
+.accent-video .tag   { background-color: var(--video); }
+.accent-aran .tag    { background-color: var(--aran); }
+.accent-maze .tag    { background-color: var(--maze); }
+.accent-code .tag    { background-color: var(--code); }
+
+
+/* ---------- 6. Work page project sections ---------- */
+
+/* Each project: text on one side, media on the other */
+.project {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5em;
+    align-items: start;
+    padding: 3em 0;
+    border-top: 8px solid var(--ink);
+}
+
+/* Reuse the accent classes for the project's top border */
+.project.accent-hotel   { border-top-color: var(--hotel); }
+.project.accent-podcast { border-top-color: var(--podcast); }
+.project.accent-video   { border-top-color: var(--video); }
+.project.accent-aran    { border-top-color: var(--aran); }
+.project.accent-maze    { border-top-color: var(--maze); }
+.project.accent-code    { border-top-color: var(--code); }
+
+/* Context / Role / Process / Outcome list */
+.details {
+    margin: 1em 0;
+}
+
+.details dt {
+    font-weight: 600;
+    margin-top: 0.8em;
+}
+
+.details dd {
+    margin: 0;
+    color: var(--muted);
+}
+
+/* "Work in progress" / "Upcoming" badge */
+.status {
+    display: inline-block;
+    font-size: 0.8em;
+    font-weight: 600;
+    padding: 0.2em 0.8em;
+    border: 2px solid var(--ink);
+    border-radius: 1em;
+}
+
+/* Images, video and the YouTube player share the same style */
+.media img,
+.media video,
+.media iframe {
+    width: 100%;
+    border-radius: 6px;
+}
+
+/* Keeps the YouTube player at a 16:9 shape */
+.media iframe {
+    aspect-ratio: 16 / 9;
+    height: auto;
+    border: 0;
+}
+
+figcaption {
+    font-size: 0.9em;
+    color: var(--muted);
+    margin-top: 0.5em;
+}
+
+figure {
+    margin: 0;
+}
+
+
+/* ---------- 7. About and Contact pages ---------- */
+
+.about {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3em;
+    align-items: start;
+    padding: 3em 0;
+}
+
+.about img {
+    width: 100%;
+    border-radius: 6px;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    list-style: none;
+    padding: 0;
+}
+
+.skills li {
+    padding: 0.3em 0.9em;
+    border: 2px solid var(--ink);
+    border-radius: 1em;
+    font-size: 0.9em;
+}
+
+/* Contact form: labels above inputs */
+.contact-form {
+    max-width: 32em;
+}
+
+.contact-form label {
+    display: block;
+    font-weight: 600;
+    margin-top: 1em;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.7em;
+    margin-top: 0.3em;
+    font: inherit;
+    border: 2px solid var(--line);
+    border-radius: 6px;
+    background-color: #ffffff;
+}
+
+/* Coloured outline when a field is selected */
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--sage-dark);
+}
+
+.contact-form button {
+    margin-top: 1.5em;
+    padding: 0.8em 1.8em;
+    font: inherit;
+    font-weight: 600;
+    color: var(--paper);
+    background-color: var(--navy);
+    border: 0;
+    border-radius: 2em;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: var(--sage-dark);
+}
+
+
+/* "At a glance" timeline on the About page:
+   a grid with dates on the left, roles on the right */
+.timeline {
+    list-style: none;
+    padding: 0;
+    margin: 1em 0 2em;
+    border-left: 3px solid var(--sage);
+}
+
+.timeline li {
+    display: grid;
+    grid-template-columns: 9em 1fr;
+    gap: 1em;
+    padding: 0.6em 0 0.6em 1.2em;
+}
+
+.timeline .when {
+    color: var(--muted);
+    font-size: 0.9em;
+}
+
+.timeline strong {
+    color: var(--navy);
+}
+
+
+/* ---------- 8. Footer ---------- */
+
+.site-footer {
+    margin-top: 3em;
+    padding: 2em 0;
+    border-top: 3px solid var(--sage);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1em;
+    color: var(--muted);
+    font-size: 0.9em;
+}
+
+
+/* ---------- 9. Small screens (media query) ---------- */
+
+/* Below 750px wide (phones), two-column layouts
+   stack into a single column so nothing gets squashed. */
+@media (max-width: 750px) {
+    h1 {
+        font-size: 2.2em;
+    }
+
+    .hero h1 {
+        font-size: 2.6em;
+    }
+
+    .project,
+    .about {
+        grid-template-columns: 1fr;
+        gap: 1.5em;
+    }
+
+    .hero {
+        padding: 3em 0 2em;
+    }
+
+    .site-nav ul {
+        gap: 1em;
+    }
+
+    .timeline li {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+}
