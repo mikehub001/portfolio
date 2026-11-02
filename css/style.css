@@ -454,6 +454,23 @@ figure {
     box-shadow: 0 10px 20px rgba(22, 56, 83, 0.15);
 }
 
+/* Tall images (e.g. the phone mockup) are limited in height
+   and centred, instead of stretching to full width */
+.media img {
+    width: auto;
+    max-width: 100%;
+    max-height: 32em;
+    margin: 0 auto;
+}
+
+/* Homepage cards: every image the same shape, cropped to fit,
+   so tall or wide images keep the cards even */
+.card img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
 /* ---------- 7. About and Contact pages ---------- */
 
 .about {
