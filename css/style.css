@@ -442,6 +442,12 @@ figure {
     margin: 0;
 }
 
+/* SoundCloud player: a short audio bar, not a 16:9 video,
+   so it overrides the video shape set above */
+.media iframe.soundcloud {
+    aspect-ratio: auto;
+    height: 166px;
+}
 
 /* ---------- 7. About and Contact pages ---------- */
 
