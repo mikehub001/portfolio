@@ -442,11 +442,16 @@ figure {
     margin: 0;
 }
 
-/* SoundCloud player: a short audio bar, not a 16:9 video,
-   so it overrides the video shape set above */
-.media iframe.soundcloud {
-    aspect-ratio: auto;
-    height: 166px;
+/* Linked screenshot: a border and a slight lift on hover
+   show that it can be clicked */
+.preview-link img {
+    border: 1px solid var(--line);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.preview-link:hover img {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(22, 56, 83, 0.15);
 }
 
 /* ---------- 7. About and Contact pages ---------- */
