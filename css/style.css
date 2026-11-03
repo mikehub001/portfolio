@@ -481,9 +481,14 @@ figure {
     padding: 3em 0;
 }
 
+/* Portrait as a circle: square shape first, then fully rounded corners */
 .about img {
     width: 100%;
-    border-radius: 6px;
+    max-width: 320px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0 auto;
 }
 
 .skills {
