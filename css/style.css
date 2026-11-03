@@ -572,6 +572,11 @@ figure {
     color: var(--navy);
 }
 
+ Centre captions under centred images and video */
+.media figcaption {
+    text-align: center;
+}
+
 
 /* ---------- 8. Footer ---------- */
 
