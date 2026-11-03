@@ -379,7 +379,7 @@ iframe {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2.5em;
-    align-items: start;
+    align-items: center;
     padding: 3em 0;
     border-top: 8px solid var(--ink);
 }
