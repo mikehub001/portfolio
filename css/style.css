@@ -1,18 +1,3 @@
-/* =========================================================
-   Mikey Dunne – Portfolio stylesheet
-   One external stylesheet shared by every page.
-   Sections:
-     1. Fonts and colour variables
-     2. Base styles
-     3. Header and navigation (flexbox)
-     4. Home page hero, accent words and discipline pills
-     5. Project cards (grid)
-     6. Work page project sections
-     7. About and Contact pages
-     8. Footer
-     9. Small screens (media query)
-   ========================================================= */
-
 
 /* ---------- 1. Fonts and colour variables ---------- */
 
@@ -23,8 +8,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@500;600;700&family=Instrument+Serif:ital@0;1&display=swap");
 
 /* Colours stored once as variables so they stay consistent.
-   Each project has its own accent colour – the "artistic twist"
-   on an otherwise calm, professional base. */
+   Each project has its own accent colour, to add to an otherwise calm, professional base. */
 :root {
     /* Base palette taken from my CV, so CV and website match */
     --paper: #f4f5f2;      /* soft off-white background */
@@ -35,8 +19,7 @@
     --muted: #5d6573;      /* secondary text */
     --line: #e4e4e4;       /* CV light grey – borders */
 
-    /* Project colours: muted, earthy tones that sit with the sage.
-       All pass WCAG AA contrast with white text. */
+    /* Project colours: muted, earthy tones that sit with the sage. */
     --hotel: #4f6f68;      /* deep sage   – Identity Hotel */
     --podcast: #b5523b;    /* terracotta  – Podcast */
     --video: #9a6b12;      /* ochre       – Art video */
@@ -205,9 +188,7 @@ iframe {
     margin: 0 auto;
 }
 
-/* The signature detail: one word per heading set in an italic serif
-   and coloured, e.g. "explore." – a small contrast that adds character
-   without extra decoration. */
+/* One word per heading set in an italic serif and coloured */
 .accent-word {
     font-family: "Instrument Serif", Georgia, serif;
     font-style: italic;
@@ -226,7 +207,7 @@ iframe {
     background-color: var(--sage-dark);
 }
 
-/* Row of pill-shaped labels; each pill's dot uses a project colour.
+/* Row of pill-shaped labels, each pill's dot uses a project colour.
    Flexbox centres them and wraps them on small screens. */
 .pills {
     display: flex;
@@ -552,8 +533,7 @@ figure {
 }
 
 
-/* "At a glance" timeline on the About page:
-   a grid with dates on the left, roles on the right */
+/* At a glance timeline on the About page, a grid with dates on the left, roles on the right */
 .timeline {
     list-style: none;
     padding: 0;
@@ -600,8 +580,7 @@ figure {
 
 /* ---------- 9. Small screens (media query) ---------- */
 
-/* Below 750px wide (phones), two-column layouts
-   stack into a single column so nothing gets squashed. */
+/* Below 750px wide (phones), two-column layouts stack into a single column so nothing gets squashed. */
 @media (max-width: 750px) {
     h1 {
         font-size: 2.2em;
